@@ -1,0 +1,140 @@
+// Navigation on Mobile
+
+nav {
+    font-family: 'Mulish', sans-serif !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.navbar__logo {
+    height: 60px;
+    line-height: 60px;
+    font-size: $h2-font;
+    font-weight: 600;
+    color: $s-color;
+    display: flex;
+    span {
+        color: $h-color;
+    }
+}
+.navbar {
+    position: relative;
+    height: 60px;
+    right: 60px;
+    z-index: 10;
+    ul {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        color: $h-color;
+        font-size: $p-font;
+        height: 60px;
+        line-height: 60px;
+        display: inline-block;
+        padding: 0 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}
+
+
+
+@keyframes hoverstate {
+	0% {
+	  width: 0%;
+	}
+	100% {
+	  width: 20%;
+	}
+  }
+
+#toggle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: $s-color-lighter;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    // @mixin d-flex {
+    //     justify-content: getJustify(c);
+    //     align-content: getAlign(c);
+    //     align-items: getAlign(c);
+    // }
+    &:before {
+        content:'';
+        position: absolute;
+        width: 28px;
+        height: 4px;
+        background: $h-color-lighter;
+        transform: translateY(-5px);
+        transition: 0.2s;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        width: 28px;
+        height: 4px;
+        background: $h-color-lighter;
+        transform: translateY(5px);
+        transition: 0.2s;
+    }
+    &.active::before{
+        transform: translateY(0px) rotate(45deg);
+        background: $m-color-lighter;
+    }
+    &.active::after{
+        transform: translateY(0px) rotate(-45deg);
+        background: $m-color-lighter;
+    }
+    &.active{
+        background: white;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .navbar {
+        position: fixed;
+        bottom: -100%;
+        right: 0;
+        width: 100%;
+        transition: 0.5s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        ul {
+            flex-direction: column;
+        }
+    }
+    .navbar.active {
+        height: calc(100vh);
+        bottom: 0;
+    }
+    #toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+}

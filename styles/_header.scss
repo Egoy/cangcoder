@@ -1,0 +1,57 @@
+header {
+    // width: 100%;
+    height: 100vh;
+    display : flex;
+    font-family: 'Mulish', sans-serif !important;
+}
+
+.hero {
+    margin : auto;
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    &__container {
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background: none;            
+        padding: 2%;
+        margin: auto;
+        border: 1px solid $s-color;
+        color: $h-color;
+        &:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: $s-color-lighter;
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+        }
+        p {
+            font-size: $p-font;
+        }
+        h1 {
+            font-size: $h1-font;
+            margin: .2rem 0;
+
+        }
+        span {
+            color: $s-color;
+        }
+    }
+    li {
+        display: inline;
+    }
+    a {
+        color: $h-color;
+        font-size: $h2-font;
+        transition: .3s;
+        margin-right: 5px;
+        &:hover {
+            color: $s-color-lighter;
+        }
+    }
+}
+
