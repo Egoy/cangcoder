@@ -67,7 +67,7 @@ nav {
 #toggle {
         position: fixed;
         bottom: 20px;
-        right: 20px;
+        right: 50px;
     width: 40px;
     height: 40px;
     background: $s-color-lighter;
@@ -77,7 +77,7 @@ nav {
     align-items: center;
     z-index: 100;
     @media screen and (max-width: 600px) {
-        left: 20px;
+        left: 50px;
     }
     // @mixin d-flex {
     //     justify-content: getJustify(c);
