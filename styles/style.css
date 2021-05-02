@@ -225,7 +225,7 @@ nav {
 }
 
 #toggle {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   width: 40px;
@@ -241,7 +241,13 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 11;
+  z-index: 100;
+}
+
+@media screen and (max-width: 600px) {
+  #toggle {
+    left: 20px;
+  }
 }
 
 #toggle:before {
@@ -284,44 +290,39 @@ nav {
   background: white;
 }
 
-@media screen and (max-width: 991px) {
-  .navbar {
-    position: fixed;
-    bottom: -100%;
-    right: 0;
-    width: 100%;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background: white;
-  }
-  .navbar ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .navbar.active {
-    height: calc(100vh);
-    bottom: 0;
-  }
-  #toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-  }
+.navbar {
+  position: fixed;
+  bottom: -100%;
+  right: 0;
+  width: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+}
+
+.navbar ul {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.navbar.active {
+  height: calc(100vh);
+  bottom: 0;
 }
 
 section {
@@ -339,6 +340,10 @@ section {
   margin: 0 auto;
   width: 100%;
   margin-bottom: calc(30px + 1vh);
+}
+
+section:last-child {
+  margin-bottom: 0;
 }
 
 .about p {
@@ -659,5 +664,173 @@ button {
   .hideonmobile {
     display: none;
   }
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact__container {
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact__info {
+  background: #86BBD8;
+  border: 1px solid #86BBD8;
+  color: #2F4858;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+}
+
+.contact__info img {
+  width: 20px;
+}
+
+.contact__info-details li {
+  margin-bottom: 15px;
+}
+
+.contact__info-details span {
+  font-size: 1rem;
+}
+
+.contact__info-soci li {
+  display: inline;
+  margin-right: 15px;
+}
+
+.contact__box {
+  min-width: 300px;
+  max-width: 500px;
+  border: 1px solid #86BBD8;
+}
+
+.contact__box-title {
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  text-align: center;
+  margin: 15px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.contact__box-inputBox {
+  position: relative;
+  margin: 30px 20px;
+}
+
+.contact__box-inputBox span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0px 0px;
+  pointer-events: none;
+  font-size: 1rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+  color: #86BBD8;
+}
+
+.contact__box-inputBox textarea {
+  height: 150px;
+}
+
+.contact__box-inputBox input, .contact__box-inputBox textarea {
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  outline: none;
+  resize: none;
+  border-bottom: 1px solid orange;
+  background: none;
+}
+
+.contact__box-inputBox input:valid ~ span, .contact__box-inputBox textarea:valid ~ span, .contact__box-inputBox input:focus ~ span, .contact__box-inputBox textarea:focus ~ span {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.contact__box-inputBox input[type="submit"] {
+  position: relative;
+  cursor: pointer;
+  background: #F6AE2D;
+  color: white;
+  border: none;
+  max-width: 150px;
+  padding: 12px;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.contact__box-inputBox input[type="submit"]:hover {
+  background: #86BBD8;
+  color: #333;
+}
+
+.footer {
+  font-family: 'Mulish', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-top: 10px;
+}
+
+.footer__logo {
+  font-size: clamp(1.2rem, 5vw, 1.2rem);
+  font-weight: 600;
+  color: #F6AE2D;
+}
+
+.footer__logo span {
+  color: #2F4858;
+}
+
+.footer p {
+  font-size: clamp(1.2rem, 5vw, 1.2rem);
+  color: #F6AE2D;
+}
+
+.footer h2 {
+  color: #2F4858;
 }
 /*# sourceMappingURL=style.css.map */
