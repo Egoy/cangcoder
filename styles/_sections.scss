@@ -79,6 +79,12 @@ button {
     border-radius: 2px;
     font-weight: 800;
     cursor: pointer;
+    overflow: hidden;
+    &:hover {
+        color: $h-color;
+        background: none;
+        border: 1px solid $s-color;
+    }
 }
 
 .title {
@@ -267,6 +273,8 @@ button {
         }
     }
 }
+
+
 .hideonmobile {
     @media screen and (max-width: 970px) {
         display: none;
@@ -290,9 +298,18 @@ button {
         flex-direction: column;
         justify-content: center;
         padding: 1rem;
-    img {
-        width: 20px;
-    }
+        img {
+            width: 20px;
+        }
+        a {
+            color: $h-color;
+            font-size: $h2-font;
+            transition: .3s;
+            margin-right: 5px;
+            &:hover {
+                color: $s-color-lighter;
+            }
+        }
         &-details {
             li {
                 margin-bottom: 15px;
@@ -311,7 +328,8 @@ button {
     &__box {
         min-width: 300px;
         max-width: 500px;
-        border: 1px solid $accent;
+        border: 2px solid $accent;
+        padding: 1rem;
         &-title {
             font-size: $h2-font;
             text-align: center;

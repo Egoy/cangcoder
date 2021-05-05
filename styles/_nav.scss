@@ -20,19 +20,15 @@ nav {
 .navbar__logo {
     height: 60px;
     line-height: 60px;
-    font-size: $h2-font;
+    font-size: $p-font;
     font-weight: 600;
     color: $s-color;
     display: flex;
     span {
-        color: $h-color;
+        color: $h-color-lighter;
     }
 }
-.navbar {
-    position: relative;
-    height: 60px;
-    right: 60px;
-    z-index: 10;
+.navbar{
     ul {
         position: relative;
         display: flex;
@@ -53,6 +49,37 @@ nav {
     }
 }
 
+.navbar__desktop{
+    position: relative;
+    height: 60px;
+    right: 60px;
+    z-index: 1;
+    @media screen and (max-width: 990px) {
+        display: none;
+    }
+    ul {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        color: $h-color;
+        font-size: $p2-font;
+        height: 60px;
+        line-height: 60px;
+        display: inline-block;
+        padding: 0 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        &:hover {
+            color: $s-color;
+        }
+    }
+}
+
 
 
 @keyframes hoverstate {
@@ -65,9 +92,9 @@ nav {
   }
 
 #toggle {
-        position: fixed;
-        bottom: 20px;
-        right: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
     width: 40px;
     height: 40px;
     background: $s-color-lighter;
@@ -126,11 +153,17 @@ nav {
     justify-content: center;
     align-items: center;
     background: white;
+    z-index: 10;
     ul {
         flex-direction: column;
     }
+    a {
+        &:hover {
+            color: $s-color;
+        }
+    }
 }
 .navbar.active {
-    height: calc(100vh);
+    height: 100vh;
     bottom: 0;
 }
