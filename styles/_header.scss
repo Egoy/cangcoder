@@ -3,6 +3,15 @@ header {
     height: 100vh;
     display : flex;
     font-family: 'Mulish', sans-serif !important;
+    position: relative;
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
 
 .hero {
@@ -10,7 +19,7 @@ header {
     width: 100%;
     max-width: 600px;
     min-width: 300px;
-    &__container {
+        &__container {
         position: relative;
         display: flex;
         justify-content: space-evenly;
