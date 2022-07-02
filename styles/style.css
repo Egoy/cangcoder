@@ -125,6 +125,43 @@ header #particles-js {
   color: #f7bb4c;
 }
 
+.hero404 {
+  margin: 5% auto;
+  height: 400px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+}
+.hero404 img {
+  max-width: 400px;
+  height: auto;
+}
+.hero404--text {
+  text-align: center;
+  color: #333;
+  position: absolute;
+  top: 570px;
+}
+.hero404 h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.hero404 p {
+  font-size: clamp(1.2rem, 5vw, 1.2rem);
+}
+.hero404 p:first-of-type {
+  margin-bottom: 10px;
+}
+.hero404 a {
+  text-decoration: underline;
+  color: #333;
+  font-weight: 700;
+}
+
 nav {
   font-family: "Mulish", sans-serif !important;
   position: absolute;
